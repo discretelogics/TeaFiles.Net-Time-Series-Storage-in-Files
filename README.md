@@ -30,7 +30,7 @@ TeaFiles = Binary Data + Header
 
 Performance
 -----------
-> 250 Mio Items per seconds cold
+> 250 Mio Items per seconds cold  
 > 465 Mio Items per seconds warm
 
 benchmark results at http://www.discretelogics.com/resources/benchmarks/teafilesbm.htm
