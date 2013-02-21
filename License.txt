@@ -1,0 +1,6 @@
+﻿This source code is released under the GNU General Public License v3.
+http://www.gnu.org/copyleft/gpl.html
+
+In addition to the terms of this license, use and distribution of this code shall be attributed to discretelogics, referencing "discretelogics.com".
+
+Contact license@discretelogics.com to negotiate deviant license conditions.
