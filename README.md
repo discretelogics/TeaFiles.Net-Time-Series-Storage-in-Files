@@ -55,8 +55,8 @@ TeaTime product family
 TeaFiles are the foundation of the TeaTime product family, the toolset for persistence, visualisation and real time analysis of time series.
 
 Related products: 
-* [TeaShell](http://www.discretelogics.com/products/teashell) - Browse Time Series like Photos
-* [TeaHouse](http://www.discretelogics.com/products/teahouse) - Browse Large Time Series by Chart
+* [TeaShell](http://www.discretelogics.com/teashell) - Browse Time Series like Photos
+* [TeaHouse](http://www.discretelogics.com/teahouse) - Browse Large Time Series by Chart
  
 
 Examples
