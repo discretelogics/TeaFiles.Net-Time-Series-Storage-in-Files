@@ -41,7 +41,6 @@ Installation
 ------------
 
 * Get the NuGet package from nuget.org/packages/TeaFiles.Net or  
-* Get binary assemblies at http://www.discretelogics.com/resources/
 
 
 Documentation
