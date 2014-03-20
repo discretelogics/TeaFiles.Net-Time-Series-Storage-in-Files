@@ -104,3 +104,5 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays", Scope = "member", Target = "TeaTime.Item.#Values")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1000:DoNotDeclareStaticMembersOnGenericTypes", Scope = "member", Target = "TeaTime.TeaFile`1.#OpenMemoryMapping(System.String)")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1000:DoNotDeclareStaticMembersOnGenericTypes", Scope = "member", Target = "TeaTime.TeaFile`1.#OpenRawMemoryMapping(System.String)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1000:DoNotDeclareStaticMembersOnGenericTypes", Scope = "member", Target = "TeaTime.TeaFile`1.#Create(System.IO.Stream,System.Boolean,System.String,TeaTime.NameValueCollection,System.Boolean)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed", Scope = "member", Target = "TeaTime.TeaFile`1.#Create(System.IO.Stream,System.Boolean,System.String,TeaTime.NameValueCollection,System.Boolean)")]

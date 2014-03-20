@@ -86,17 +86,31 @@ namespace TeaTime
         /// alternative storage medias like <see cref="MemoryStream"/>.
         /// 
         /// Note that this method does not transfer ownership of the stream to the returned instance of TeaFileT and that disposing 
-        /// the TeaFileT instance does not dispose <param name="stream"></param>. So the management of the passed stream resource remains the duty of the caller.
+        /// the TeaFileT instance does not dispose <paramref name="stream"/>. So the management of the passed stream resource remains the duty of the caller.
         /// <see cref="Create(string,string,TeaTime.NameValueCollection,bool)"/>
         /// </remarks>
         public static TeaFile<T> Create(Stream stream, string contentDescription = null, NameValueCollection nameValues = null, bool includeItemDescription = true)
-        {
-            if (stream == null) throw new ArgumentNullException("stream");
+        {            
             return Create(stream, false, contentDescription, nameValues, includeItemDescription);
         }
 
-        static TeaFile<T> Create(Stream stream, bool ownsStream, string contentDescription = null, NameValueCollection nameValues = null, bool includeItemDescription = true)
+        /// <summary>
+        /// Creates a TeaFile, using the specified stream as the underlying storage media.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <param name="ownsStream">If true, the instance returned owns the stream, such that disposing the returned instance also disposes <paramref name="stream"/>.</param>
+        /// <param name="contentDescription">The content description.</param>
+        /// <param name="nameValues">The name values.</param>
+        /// <param name="includeItemDescription">if set to <c>true</c> [include item description].</param>
+        /// <returns></returns>
+        /// <remarks>
+        /// Instead of creating a new <see cref="FileStream"/>, this method takes the <see cref="Stream"/> passed. This provides 
+        /// more control over the stream, like setting specific <see cref="FileShare"/> attributes. It also allows usage of 
+        /// alternative storage medias like <see cref="MemoryStream"/>.        
+        /// </remarks>
+        public static TeaFile<T> Create(Stream stream, bool ownsStream, string contentDescription = null, NameValueCollection nameValues = null, bool includeItemDescription = true)
         {
+            if (stream == null) throw new ArgumentNullException("stream");
             var tf = new TeaFile<T>();
             try
             {
