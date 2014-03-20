@@ -84,6 +84,9 @@ namespace TeaTime
         /// Instead of creating a new <see cref="FileStream"/>, this method takes the <see cref="Stream"/> passed. This provides 
         /// more control over the stream, like setting specific <see cref="FileShare"/> attributes. It also allows usage of 
         /// alternative storage medias like <see cref="MemoryStream"/>.
+        /// 
+        /// Note that this method does not transfer ownership of the stream to the returned instance of TeaFileT and that disposing 
+        /// the TeaFileT instance does not dispose <param name="stream"></param>. So the management of the passed stream resource remains the duty of the caller.
         /// <see cref="Create(string,string,TeaTime.NameValueCollection,bool)"/>
         /// </remarks>
         public static TeaFile<T> Create(Stream stream, string contentDescription = null, NameValueCollection nameValues = null, bool includeItemDescription = true)
