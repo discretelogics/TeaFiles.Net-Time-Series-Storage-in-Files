@@ -80,3 +80,8 @@ using (var tf = TeaFile<Tick>.OpenRead("acme.tea"))
     return tf.Items.Sum(item => item.Price);
 }
 ```
+
+License
+-------
+
+Released under the MIT license.
