@@ -1,127 +1,25 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DB9B6FE9-849F-491D-A356-0609EC45F441}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TeaTime</RootNamespace>
     <AssemblyName>DiscreteLogics.TeaFile.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>..\Bin\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <TargetFramework>net45</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <SignAssembly>true</SignAssembly>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>..\Bin\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
-  </PropertyGroup>
+
+  <ItemGroup>    
+    <PackageReference Include="MSTest.TestFramework" Version="1.2.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.2.0" />
+    <PackageReference Include="SharpTestsEx" Version="2.0.0" /> 
+  </ItemGroup>
+    
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <ProjectReference Include="..\TeaFiles\TeaFiles.csproj" />     
+  </ItemGroup>
+    
+  <ItemGroup>
     <Reference Include="Moq">
       <HintPath>..\Lib\Moq.dll</HintPath>
     </Reference>
-    <Reference Include="SharpTestsEx">
-      <HintPath>..\Lib\SharpTestsEx.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Access\ItemCollectionTest.cs" />
-    <Compile Include="Access\ManagedMemoryMappingTest.cs" />
-    <Compile Include="Access\RawMemoryMappingTest.cs" />
-    <Compile Include="Access\SafeBufferTest.cs" />
-    <Compile Include="Base\EventTest.cs" />
-    <Compile Include="Base\NameValueTest.cs" />
-    <Compile Include="Base\TimeScaleTest.cs" />
-    <Compile Include="Base\TimeTest.cs" />
-    <Compile Include="Description\DescriptionTest.cs" />
-    <Compile Include="Description\FieldTest.cs" />
-    <Compile Include="Description\ItemDescriptionDetailsTest.cs" />
-    <Compile Include="Header\Sections\TimeSectionFormatterTest.cs" />
-    <Compile Include="Layout\ByteSearcherTest.cs" />
-    <Compile Include="Layout\LayoutAnalyzerTest.cs" />
-    <Compile Include="Description\TeaTypeTest.cs" />
-    <Compile Include="ExtensionsTest.cs" />
-    <Compile Include="Header\HeaderManagerTest.cs" />
-    <Compile Include="Header\Sections\ContentSectionFormatterTest.cs" />
-    <Compile Include="Header\Sections\ItemSectionFormatterTest.cs" />
-    <Compile Include="Header\Sections\NameValueSectionFormatterTest.cs" />
-    <Compile Include="IO\FileIOTest.cs" />
-    <Compile Include="Description\ItemDescriptionTest.cs" />
-    <Compile Include="ItemsTTest.cs" />
-    <Compile Include="SnapshotTest.cs" />
-    <Compile Include="TeaFileCoreTest.cs" />
-    <Compile Include="TeaFileTTest.cs" />
-    <Compile Include="IO\FormattedReaderTest.cs" />
-    <Compile Include="IO\FormattedWriterTest.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SampleItems\ItemTypes.cs" />
-    <Compile Include="TeaFileTest.cs" />
-    <Compile Include="TestStream.cs" />
-    <Compile Include="TestUtils.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TeaFiles\TeaFiles.csproj">
-      <Project>{1CADE377-2821-480D-A0E7-34F224886AF6}</Project>
-      <Name>TeaFiles</Name>
-      <Private>True</Private>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
