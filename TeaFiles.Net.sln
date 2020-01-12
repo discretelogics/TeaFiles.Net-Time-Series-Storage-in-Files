@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeaFiles", "TeaFiles\TeaFiles.csproj", "{1CADE377-2821-480D-A0E7-34F224886AF6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeaFiles.Test", "TeaFiles.Test\TeaFiles.Test.csproj", "{DB9B6FE9-849F-491D-A356-0609EC45F441}"
@@ -114,5 +116,8 @@ Global
 		{AFE98971-4858-4F1F-9E38-435EC3E6D225} = {1DD41029-811D-44C3-8366-9F3C7F4D75C6}
 		{E1A16FF5-631B-4CC9-848F-61FF1EA3B961} = {1DD41029-811D-44C3-8366-9F3C7F4D75C6}
 		{7F882401-AA6D-443F-8FA4-E4AF8C3E5CB2} = {1DD41029-811D-44C3-8366-9F3C7F4D75C6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0FBA890D-1070-4626-8174-4FA8F1126380}
 	EndGlobalSection
 EndGlobal

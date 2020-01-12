@@ -1,120 +1,26 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1CADE377-2821-480D-A0E7-34F224886AF6}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TeaTime</RootNamespace>
-    <AssemblyName>DiscreteLogics.TeaFiles</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <PlatformTarget>x86</PlatformTarget>
-    <SignAssembly Condition=" '$(Configuration)' == 'Release' ">true</SignAssembly>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
-    <DelaySign>false</DelaySign>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>..\Bin\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>
-    </DocumentationFile>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisRuleSet>TeaFile.ruleset</CodeAnalysisRuleSet>
-    <CodeAnalysisRules>
-    </CodeAnalysisRules>
-    <RegisterForComInterop>false</RegisterForComInterop>
-    <RunCodeAnalysis>false</RunCodeAnalysis>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>..\Bin\</OutputPath>
-    <DefineConstants>TRACE;CODE_ANALYSIS;RELEASE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <CodeAnalysisRuleSet>TeaFiles.ruleset</CodeAnalysisRuleSet>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <CodeAnalysisTreatWarningsAsErrors>True</CodeAnalysisTreatWarningsAsErrors>
-    <DocumentationFile>..\Bin\DiscreteLogics.TeaFiles.xml</DocumentationFile>
-    <Prefer32Bit>false</Prefer32Bit>
+
+  <PropertyGroup>
+    <Company>TeaFiles</Company>
+    <Authors>Anon</Authors>
+    <PackageId>TeaFiles</PackageId>
+    <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
   </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+      <_Parameter1>DiscreteLogics.TeaFile.Tests</_Parameter1>
+    </AssemblyAttribute>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+      <_Parameter1>DynamicProxyGenAssembly2</_Parameter1>
+    </AssemblyAttribute>
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Access\ManagedMemoryMapping.cs" />
-    <Compile Include="Access\Extensions.cs" />
-    <Compile Include="Access\Typed\ItemsCollectionT.cs" />
-    <Compile Include="Access\RawMemoryMapping.cs" />
-    <Compile Include="Access\Typed\SafeBufferT.cs" />
-    <Compile Include="Access\UnTyped\IItemReader.cs" />
-    <Compile Include="Access\UnTyped\Item.cs" />
-    <Compile Include="Access\UnTyped\ItemCollection.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Base\Event.cs" />
-    <Compile Include="Base\TimeScale.cs" />
-    <Compile Include="Base\Time.cs" />
-    <Compile Include="Description\DescriptionSource.cs" />
-    <Compile Include="Header\Sections\TimeSectionFormatter.cs" />
-    <Compile Include="Layout\AnalyzedField.cs" />
-    <Compile Include="Layout\ByteSearcher.cs" />
-    <Compile Include="Layout\FieldPath.cs" />
-    <Compile Include="Layout\LayoutAnalyzer.cs" />
-    <Compile Include="Description\FieldType.cs" />
-    <Compile Include="Description\ItemDescriptionElements.cs" />
-    <Compile Include="Exceptions.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="IO\Interfaces.cs" />
-    <Compile Include="TeaFileCore.cs" />
-    <Compile Include="Description\Field.cs" />
-    <Compile Include="Description\ItemDescription.cs" />
-    <Compile Include="Base\NameValue.cs" />
-    <Compile Include="Description\TeaFileDescription.cs" />
-    <Compile Include="IO\FileIO.cs" />
-    <Compile Include="IO\FormattedReader.cs" />
-    <Compile Include="IO\FormattedWriter.cs" />
-    <Compile Include="Header\HeaderManager.cs" />
-    <Compile Include="Header\ReadContext.cs" />
-    <Compile Include="Header\Sections\NameValueSectionFormatter.cs" />
-    <Compile Include="Header\WriteContext.cs" />
-    <Compile Include="Extensions.cs" />
-    <Compile Include="Header\Sections\ContentSectionFormatter.cs" />
-    <Compile Include="Header\Sections\ItemSectionFormatter.cs" />
-    <Compile Include="Header\ISectionFormatter.cs" />
-    <Compile Include="TeaFile.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TeaFileT.cs" />
-    <Compile Include="TeaTime.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="License.txt" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>
