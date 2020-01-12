@@ -217,8 +217,10 @@ namespace TeaTime
         {
             const string filename = "TeaFileTTest_FinalizerClosesNonDisposedFile.tea";
 
-            TeaFile<int>.Create(filename);
+            var tf = TeaFile<int>.Create(filename);
             TestUtils.IsLocked(filename).Should().Be.True();
+
+            tf.Dispose();
 
             GC.Collect();
             GC.WaitForPendingFinalizers();
