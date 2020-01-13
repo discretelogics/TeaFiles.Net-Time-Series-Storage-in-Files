@@ -217,10 +217,10 @@ namespace TeaTime
         {
             const string filename = "TeaFileTTest_FinalizerClosesNonDisposedFile.tea";
 
-            var tf = TeaFile<int>.Create(filename);
-            TestUtils.IsLocked(filename).Should().Be.True();
-
-            tf.Dispose();
+            using (var tf = TeaFile<int>.Create(filename))
+            {
+                TestUtils.IsLocked(filename).Should().Be.True();
+            }
 
             GC.Collect();
             GC.WaitForPendingFinalizers();
@@ -402,7 +402,7 @@ namespace TeaTime
         [TestMethod]
         public void AppendStreamTest()
         {
-            const string filename = "AppendStreamTest";
+            const string filename = "AppendStreamTest.tea";
             using (var tf = TeaFile<int>.Create(filename))
             {
                 tf.Write(Enumerable.Range(1, 10));
@@ -632,7 +632,7 @@ namespace TeaTime
             d.NameValues.GetValue<int>("name1").Should().Be(11);
             d.NameValues.GetValue<string>("name2").Should().Be("value2");
         }
-        
+
         [TestMethod]
         public void ItemThatHasNoTimeAttributeCanBeUsedForTeaFile()
         {
