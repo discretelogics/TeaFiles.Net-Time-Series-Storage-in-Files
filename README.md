@@ -85,3 +85,8 @@ License
 -------
 
 Released under the MIT license.
+
+Thanks
+------
+
+to contributors @larstbone and @SabotageAndi
