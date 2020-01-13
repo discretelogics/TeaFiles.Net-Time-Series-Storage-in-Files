@@ -6,12 +6,13 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Company>TeaFiles</Company>
-    <Authors>Anon</Authors>
-    <PackageId>TeaFiles</PackageId>
-    <Version>1.0.0</Version>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+    <Company>DiscreteLogics</Company>
+    <PackageId>TeaFiles.Net</PackageId>
+    <Version>2.0.0</Version>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <Copyright>DiscreteLogics and github contributors</Copyright>
+    <Description>Time Series storage in flat files</Description>
+    <FileVersion>2.0.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
