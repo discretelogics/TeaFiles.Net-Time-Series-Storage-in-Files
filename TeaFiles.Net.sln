@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeaFiles", "TeaFiles\TeaFiles.csproj", "{1CADE377-2821-480D-A0E7-34F224886AF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeaFiles", "TeaFiles\TeaFiles.csproj", "{1CADE377-2821-480D-A0E7-34F224886AF6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeaFiles.Test", "TeaFiles.Test\TeaFiles.Test.csproj", "{DB9B6FE9-849F-491D-A356-0609EC45F441}"
 EndProject
@@ -21,6 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sum", "Examples\Sum\Sum.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9462292D-69C9-4DF7-87F0-E821FCE86FDD}"
 	ProjectSection(SolutionItems) = preProject
+		azure-pipelines.yml = azure-pipelines.yml
 		Coverage.testsettings = Coverage.testsettings
 		Normal.testsettings = Normal.testsettings
 		normal32.testsettings = normal32.testsettings

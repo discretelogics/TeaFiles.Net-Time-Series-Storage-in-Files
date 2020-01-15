@@ -1,18 +1,32 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <ProjectGuid>c85b6ff7-387d-48fa-9377-e2c9dd76feb6</ProjectGuid>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>TeaFiles.snk</AssemblyOriginatorKeyFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup>
     <Company>DiscreteLogics</Company>
     <PackageId>TeaFiles.Net</PackageId>
-    <Version>2.0.0</Version>
+    <VersionPrefix>2.0.0</VersionPrefix>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <Copyright>DiscreteLogics and github contributors</Copyright>
     <Description>Time Series storage in flat files</Description>
     <FileVersion>2.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>Daffy Duck</Authors>
+    <PackageTags>netstandard;netcore;TeaFiles</PackageTags>
+    <PackageProjectUrl>https://github.com/discretelogics/TeaFiles.Net-time-series-storage-in-flat-files</PackageProjectUrl>
+    <PackageReleaseNotes>NONE</PackageReleaseNotes>
+    <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/discretelogics/TeaFiles.Net-time-series-storage-in-flat-files</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
