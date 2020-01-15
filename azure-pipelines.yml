@@ -1,0 +1,84 @@
+# BASED ON THIS DECENT DESCRIPTION
+# https://ronaldbosma.github.io/blog/2019/09/03/using-multi-stage-yaml-pipeline-to-create-and-publish-nuget-packages/
+
+trigger:
+- master
+
+stages:
+
+- stage: 'Build'
+  variables:
+    buildConfiguration: 'Release'
+
+  jobs:
+  - job:
+    pool:
+      vmImage: 'ubuntu-latest'
+
+    workspace:
+      clean: all
+
+    steps:
+    - task: UseDotNet@2
+      displayName: 'Use .NET Core sdk'
+      inputs:
+        packageType: sdk
+        version: 2.2.x
+        installationPath: $(Agent.ToolsDirectory)/dotnet
+
+    - task: DotNetCoreCLI@2
+      displayName: "NuGet Restore"
+      inputs:
+        command: restore
+        projects: '**/TeaFiles.csproj'
+
+    - task: DotNetCoreCLI@2
+      displayName: "Build Solution"
+      inputs:
+        command: build
+        projects: '**/TeaFiles.csproj'
+        arguments: '--configuration $(buildConfiguration)'
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Create NuGet Package - Release Version'
+      inputs:
+        command: pack
+        packagesToPack: '**/TeaFiles.csproj'
+        packDirectory: '$(Build.ArtifactStagingDirectory)/packages/releases'
+        arguments: '--configuration $(buildConfiguration)'
+        nobuild: true
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Create NuGet Package - Prerelease Version'
+      inputs:
+        command: pack
+        packagesToPack: '**/TeaFiles.csproj'
+        buildProperties: 'VersionSuffix="$(Build.BuildNumber)"'
+        packDirectory: '$(Build.ArtifactStagingDirectory)/packages/prereleases'
+        arguments: '--configuration $(buildConfiguration)'
+
+    - publish: '$(Build.ArtifactStagingDirectory)/packages'
+      artifact: 'packages'
+      
+- stage: 'PublishPrereleaseNuGetPackage'
+  displayName: 'Publish Prerelease NuGet Package'
+  dependsOn: 'Build'
+  condition: succeeded()
+  jobs:
+  - job:
+    pool:
+      vmImage: 'ubuntu-latest'
+
+    steps:
+    - checkout: none
+
+    - download: current
+      artifact: 'packages'
+
+    - task: NuGetCommand@2
+      displayName: 'Push NuGet Package'
+      inputs:
+        command: 'push'
+        packagesToPush: '$(Pipeline.Workspace)/packages/prereleases/*.nupkg'
+        nuGetFeedType: 'internal'
+        publishVstsFeed: 'Discretely'      
