@@ -20,7 +20,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Authors>Daffy Duck</Authors>
+    <Authors>TeaFile contributors</Authors>
     <PackageTags>netstandard;netcore;TeaFiles</PackageTags>
     <PackageProjectUrl>https://github.com/discretelogics/TeaFiles.Net-time-series-storage-in-flat-files</PackageProjectUrl>
     <PackageReleaseNotes>NONE</PackageReleaseNotes>
